@@ -1,0 +1,14 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+    <h1> Detalhe do Produto {{ produto.nome_produto }}</h1>
+    {% if produto %}
+        <ul>
+            <li>Nome: {{ produto.nome_produto }}</li>
+            <li>Descrição: {{ produto.descricao }}</li>
+            <li>Preço: {{ produto.preco }}</li>
+        </ul>
+    {% else %}
+        <h1> Nenhum produto encontrado para esse identificador!!</h1>
+    {% endif %}
+
+{% endblock content %}

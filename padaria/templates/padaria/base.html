@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Padaria da Susi</title>
+</head>
+<body>
+    <header style="background-color: rgb(240, 204, 160);">
+        <figure style="text-align: center;">
+            {% load static %}
+            <img src="{% static 'raiz/pao.jpg' %}" alt="Pão profissional com gosto caseiro" width="50%">
+        </figure>
+        <h1 style="text-align: center;">Bem vindo a Padaria da Susi!</h1>
+        <nav style="text-align: center; background-color: bisque">
+            <a href="/clientes/novo">Novo Cliente</a>
+            <a href="/clientes/">Listar Clientes</a>
+            <a href="/produtos/novoProduto">Novo Produto</a>
+            <a href="/produtos/">Listar Produtos</a>
+            <a href="/vendas/novo">Faça seu pedido!</a>
+            <a href="/vendas/">Fila de atendimento</a>
+        </nav>
+    </header>
+    <main>
+        <article style="text-align: center;">
+            <br>
+            {% block content %}
+
+            {% endblock %}
+        </article>
+        <br>
+    </main>
+    <footer style="background-color: rgb(240, 204, 160);">Todos os direitos reservados. CNPJ 098.009.099/0001-23</footer>
+
+</body>
+</html>

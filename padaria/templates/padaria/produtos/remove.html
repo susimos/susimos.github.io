@@ -1,0 +1,16 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+
+
+    {% if produto %}
+        <h1>Confirma remoção do Produto: {{ produto.nome_produto }}</h1>
+        <form method="post">
+            {% csrf_token%}
+
+            <p>Você confirma a remoção do produto: {{ produto.id }} - {{ produto.nome_produto }}</p>
+            <button type="submit">Confirmar Remoção</button>
+        </form>
+    {% else %}
+        <h1>Produto com esse ID não encontrado!</h1>
+    {% endif %}
+{% endblock content %}

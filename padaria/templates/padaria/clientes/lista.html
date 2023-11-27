@@ -1,0 +1,27 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+<table align="center">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>CPF</th>
+        <th>E-mail</th>
+
+    </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.sobrenome }}</td>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.email }}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock content %}

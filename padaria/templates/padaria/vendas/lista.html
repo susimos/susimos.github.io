@@ -1,0 +1,29 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+<h1>Fila de Atendimento</h1>
+<table  align="center">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Produto</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for venda in vendas %}
+            <tr>
+                <td>{{ venda.id }}</td>
+                <td>{{ venda.cliente.nome }}</td>
+                <td>{{ venda.produto.nome_produto }}</td>
+                <td>{{ venda.data_hora }}</td>
+                <td>
+                    <a href="{% url 'padaria:atualiza_venda' pk=venda.id %}">Atualizar</a>
+                    <a href="{% url 'padaria:remove_venda' pk=venda.id %}">Remover</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock content %}

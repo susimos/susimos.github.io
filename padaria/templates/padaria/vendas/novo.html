@@ -1,0 +1,13 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+<h1>Formulário de Inclusão de Venda</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form }}
+
+    <button type="submit">Cadastrar</button>
+
+</form>
+{% endblock content %}

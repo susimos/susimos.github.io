@@ -1,0 +1,28 @@
+{% extends "padaria/base.html" %}
+{% block content %}
+<h1>Lista de Produtos</h1>
+<table  align="center">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.nome_produto }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td>{{ produto.preco }}</td>
+                <td>
+                    <a href="{% url 'padaria:produtos_atualiza' pk=produto.id %}">Atualizar</a>
+                    <a href="{% url 'padaria:remove_produto' pk=produto.id %}">Remover</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock content %}
